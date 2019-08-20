@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RhinoCheats_BO2", "RhinoCheats_BO2\RhinoCheats_BO2.vcxproj", "{E5A11CB4-0B66-4451-AC85-F8CCC80A8745}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		PlutoniumT6R|Win32 = PlutoniumT6R|Win32
+		REDACTED|Win32 = REDACTED|Win32
+		Steam|Win32 = Steam|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5A11CB4-0B66-4451-AC85-F8CCC80A8745}.PlutoniumT6R|Win32.ActiveCfg = PlutoniumT6R|Win32
+		{E5A11CB4-0B66-4451-AC85-F8CCC80A8745}.PlutoniumT6R|Win32.Build.0 = PlutoniumT6R|Win32
+		{E5A11CB4-0B66-4451-AC85-F8CCC80A8745}.REDACTED|Win32.ActiveCfg = REDACTED|Win32
+		{E5A11CB4-0B66-4451-AC85-F8CCC80A8745}.REDACTED|Win32.Build.0 = REDACTED|Win32
+		{E5A11CB4-0B66-4451-AC85-F8CCC80A8745}.Steam|Win32.ActiveCfg = Steam|Win32
+		{E5A11CB4-0B66-4451-AC85-F8CCC80A8745}.Steam|Win32.Build.0 = Steam|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDDCAC5C-83E4-4F8F-9885-811E1C6CBCA1}
+	EndGlobalSection
+EndGlobal

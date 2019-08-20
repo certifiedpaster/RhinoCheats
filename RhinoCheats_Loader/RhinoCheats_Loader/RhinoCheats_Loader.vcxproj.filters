@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{26a423d5-0659-496b-958c-71bf45a52054}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Login">
+      <UniqueIdentifier>{507d3052-2561-4f5e-8120-31850f1d0cbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Main">
+      <UniqueIdentifier>{9bd67b55-dc49-44a0-8ab4-7aae4cd3d442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Wait">
+      <UniqueIdentifier>{2916b180-9d25-4de0-af2b-c2730f262a19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\WinAPI">
+      <UniqueIdentifier>{f93a55c7-325c-4c51-bb4f-95e7de242f5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{85563b50-f5fd-4b1e-a7fb-6ed4acbde081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Security">
+      <UniqueIdentifier>{bf9881e1-b247-41aa-bace-0dcec71fa99b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Security\Encryption">
+      <UniqueIdentifier>{d24b0b22-3b37-4382-9958-fcea6bc67a21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Security\HWID">
+      <UniqueIdentifier>{9b2cd22c-7ada-4ec6-9802-e7dbc805e136}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Networking">
+      <UniqueIdentifier>{b191721b-8f41-4ce8-9c56-1da76ccf1087}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WinMain.cpp" />
+    <ClCompile Include="Security\HWID\HWID.cpp">
+      <Filter>Security\HWID</Filter>
+    </ClCompile>
+    <ClCompile Include="Security\Encryption\Encryption.cpp">
+      <Filter>Security\Encryption</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\Routines.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\Login\LoginDlg.cpp">
+      <Filter>Interface\Login</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\Main\MainDlg.cpp">
+      <Filter>Interface\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface\Wait\WaitDlg.cpp">
+      <Filter>Interface\Wait</Filter>
+    </ClCompile>
+    <ClCompile Include="Networking\Network.cpp">
+      <Filter>Networking</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resources\Resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Security\HWID\HWID.h">
+      <Filter>Security\HWID</Filter>
+    </ClInclude>
+    <ClInclude Include="Security\Encryption\Encryption.h">
+      <Filter>Security\Encryption</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\Login\LoginDlg.h">
+      <Filter>Interface\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\Main\MainDlg.h">
+      <Filter>Interface\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\WinAPI\Button.hpp">
+      <Filter>Interface\WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\WinAPI\Control.hpp">
+      <Filter>Interface\WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\WinAPI\Dialog.hpp">
+      <Filter>Interface\WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\WinAPI\EditBox.hpp">
+      <Filter>Interface\WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\WinAPI\ListView.hpp">
+      <Filter>Interface\WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\WinAPI\Message.hpp">
+      <Filter>Interface\WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\WinAPI\ProgressBar.hpp">
+      <Filter>Interface\WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\WinAPI\Static.hpp">
+      <Filter>Interface\WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\WinAPI\StatusBar.hpp">
+      <Filter>Interface\WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\WinAPI\StdAfx.hpp">
+      <Filter>Interface\WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\WinAPI\Thunk.hpp">
+      <Filter>Interface\WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\WinAPI\Window.hpp">
+      <Filter>Interface\WinAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Interface\Wait\WaitDlg.h">
+      <Filter>Interface\Wait</Filter>
+    </ClInclude>
+    <ClInclude Include="Networking\Network.h">
+      <Filter>Networking</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Resource.ico">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources\Resource.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

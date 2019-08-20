@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Document Version="2">
+    <Protection InputFileName="..\x64\Release\RhinoCheats_Loader.exe" Options="954312" OutputFileName="..\x64\Release\Rhinoloader.exe" VMCodeSectionName=".virtual" WaterMarkName="InUrFace">
+        <Messages>
+            <Message Id="0">Debugger Found</Message>
+            <Message Id="1">Virtualization Tools Found</Message>
+            <Message Id="2">File Corrupted</Message>
+            <Message Id="3">Serial Number Required</Message>
+        </Messages>
+        <Folders>
+            <Folder Name="Strings" />
+        </Folders>
+        <Procedures>
+            <Procedure MapAddress="WinMain" Options="0" />
+            <Procedure MapAddress='string &quot;Username cannot be empty.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Username cannot have spaces.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Password cannot be empty.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Password cannot have spaces.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;C:\RC\Authorization.ini&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;USER&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;RhinoCheats&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;PASS&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Game&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Subscription&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Expiration&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Idle&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;login.php?&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;&amp;hwid=&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;&amp;password=&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;&amp;username=&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;authv1.rhinocheats.com&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;nope.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;empty hwid&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;development&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;different hwid&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;no cheats&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;no customer&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Customer with the username &quot;%s&quot; doesn&apos;t exist.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;bad password&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Your password is incorrect.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;The HTTP request returned NULL (failure).&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;This release has been obsoleted.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Your HWID couldn&apos;t be determined.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;This product is undergoing development.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Your HWID has changed.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;There&apos;s no cheats associated with your account.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;&lt;br&gt;&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;#end#&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;#&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;1 Day&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;1 Week&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;2 Weeks&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;1 Month&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;3 Months&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;6 Months&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;1 Year&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Lifetime&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Special Access&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;...&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Enumerating processes for &quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot; cheat...&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Requesting &quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;?&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;https://authv2.rhinocheats.com/&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Retrieving data from the server...&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;authv2.rhinocheats.com&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Validating response...&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;The data returned failed to validate.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;paranormal activity.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;the session is not authenticated.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Attaching to &quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot; (0x%X).&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Failed to attach to &quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot; seconds...&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Sleeping for &quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Injecting &quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot; cheat.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Failed to inject &quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Cleaning up...&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Success&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot; cheat loaded!&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;You must select a cheat.&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Awaiting launch of &quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;Are you sure you wish to cancel?&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;text/*&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;POST&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;#^TMA!kNZK$qrp%wA&amp;+6nCqX9=-q9+tFQPMxxhW9+Sfash266s&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;W%+m3D@stf%?S8te&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+            <Procedure MapAddress='string &quot;RhinoLoader/3.3 (id;35EFF45628CF271AF4D77D99F2EE7578EEA1C13F96E98931F5CE43D22A6A1F9D7AFF5BED714F7)&quot;' Index="0" Options="0" Folder="0" CompilationType="1" />
+        </Procedures>
+        <Objects />
+    </Protection>
+    <Script />
+    <DLLBox>
+        <Folders />
+    </DLLBox>
+    <LicenseManager />
+</Document>

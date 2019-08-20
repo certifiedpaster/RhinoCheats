@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="ImGui\imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_widgets.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\Addons\FileSystem\imguifilesystem.cpp">
+      <Filter>ImGui\Addons\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\Addons\TabWindow\imguitabwindow.cpp">
+      <Filter>ImGui\Addons\TabWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\DX11\imgui_impl_dx11.cpp">
+      <Filter>ImGui\DX11</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\Win32\imgui_impl_win32.cpp">
+      <Filter>ImGui\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Hooks.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\MainGUI.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Aimbot\Aimbot.cpp">
+      <Filter>Core\Aimbot</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Autowall\Autowall.cpp">
+      <Filter>Core\Autowall</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Drawing\Drawing.cpp">
+      <Filter>Core\Drawing</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Mathematics\Mathematics.cpp">
+      <Filter>Core\Mathematics</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\TargetList\TargetList.cpp">
+      <Filter>Core\TargetList</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Profiler\Profiler.cpp">
+      <Filter>Core\Profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Profiler\RapidXML\Utilities\FileUtility.cpp">
+      <Filter>Core\Profiler\RapidXML\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\AntiAim\AntiAim.cpp">
+      <Filter>Core\AntiAim</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Removals\Removals.cpp">
+      <Filter>Core\Removals</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StdAfx.hpp" />
+    <ClInclude Include="ImGui\imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\Addons\dirent_portable.h">
+      <Filter>ImGui\Addons</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\Addons\FileSystem\imguifilesystem.h">
+      <Filter>ImGui\Addons\FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\Addons\TabWindow\imguitabwindow.h">
+      <Filter>ImGui\Addons\TabWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\DX11\imgui_impl_dx11.h">
+      <Filter>ImGui\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\Win32\imgui_impl_win32.h">
+      <Filter>ImGui\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\STB\imstb_rectpack.h">
+      <Filter>ImGui\STB</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\STB\imstb_textedit.h">
+      <Filter>ImGui\STB</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\STB\imstb_truetype.h">
+      <Filter>ImGui\STB</Filter>
+    </ClInclude>
+    <ClInclude Include="Detours\detours.h">
+      <Filter>Detours</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Hooks.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\MainGUI.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Aimbot\Aimbot.h">
+      <Filter>Core\Aimbot</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Autowall\Autowall.h">
+      <Filter>Core\Autowall</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Drawing\Drawing.h">
+      <Filter>Core\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Engine\Engine.hpp">
+      <Filter>Core\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Engine\Thunk.hpp">
+      <Filter>Core\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Mathematics\Mathematics.h">
+      <Filter>Core\Mathematics</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TargetList\TargetList.h">
+      <Filter>Core\TargetList</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Profiler\Profiler.h">
+      <Filter>Core\Profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Profiler\RapidXML\rapidxml.hpp">
+      <Filter>Core\Profiler\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Profiler\RapidXML\rapidxml_iterators.hpp">
+      <Filter>Core\Profiler\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Profiler\RapidXML\rapidxml_print.hpp">
+      <Filter>Core\Profiler\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Profiler\RapidXML\rapidxml_utils.hpp">
+      <Filter>Core\Profiler\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Profiler\RapidXML\rapidxml_wrap.hpp">
+      <Filter>Core\Profiler\RapidXML</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Profiler\RapidXML\Utilities\FileUtility.h">
+      <Filter>Core\Profiler\RapidXML\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Profiler\RapidXML\Utilities\StringUtility.hpp">
+      <Filter>Core\Profiler\RapidXML\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\AntiAim\AntiAim.h">
+      <Filter>Core\AntiAim</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Removals\Removals.h">
+      <Filter>Core\Removals</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{f2164ba0-a23c-4091-bb8f-74cf0f08b29d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\Addons">
+      <UniqueIdentifier>{b43b9c69-8506-4c3c-bdd5-54c8757cf032}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\Addons\FileSystem">
+      <UniqueIdentifier>{94cb3751-4aa9-4223-a21e-a6b21ca53843}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\Addons\TabWindow">
+      <UniqueIdentifier>{06baed79-8206-4f50-bb4b-c63fed782ca1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\DX11">
+      <UniqueIdentifier>{50bfff71-bd14-423c-a7ea-dc8b9500a411}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\STB">
+      <UniqueIdentifier>{f6c9c7c9-81fa-47dd-a179-156d52d3a11c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\Win32">
+      <UniqueIdentifier>{111918df-f6b7-4874-be85-094219cf4c76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Detours">
+      <UniqueIdentifier>{771a1900-6ea0-41e4-be80-443ad2a80a5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{54d9cc06-747b-42dd-afe3-125c5cd75e1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Aimbot">
+      <UniqueIdentifier>{172c774a-9762-480b-bbdb-c75369dcaf59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Autowall">
+      <UniqueIdentifier>{5ab7dda3-863e-4bdd-8110-34aa03585dfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Drawing">
+      <UniqueIdentifier>{c43ad3a6-3e81-4f7f-a62a-75bb494cb83c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Engine">
+      <UniqueIdentifier>{c67aa942-d452-49e3-b63a-4b6b05075c8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Mathematics">
+      <UniqueIdentifier>{78962556-2480-4940-9814-2f26ce4ce9b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Profiler">
+      <UniqueIdentifier>{119b70b5-6eae-48d4-ab4b-5210a5b54ce9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Profiler\RapidXML">
+      <UniqueIdentifier>{c63f37bb-faf7-47be-bd23-7c197cc10f05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Profiler\RapidXML\Utilities">
+      <UniqueIdentifier>{9730a6c1-2806-4310-8ec5-0698bb9fc17a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\TargetList">
+      <UniqueIdentifier>{39b66f95-5f97-42c0-adb6-546d42f402c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\AntiAim">
+      <UniqueIdentifier>{8681d65f-1dd2-430a-8816-67529087868f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Removals">
+      <UniqueIdentifier>{00e3ae7d-541e-41e1-8b31-19781ffa965b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Detours\detours.lib">
+      <Filter>Detours</Filter>
+    </Library>
+  </ItemGroup>
+</Project>
