@@ -4,125 +4,12 @@ Autowall_t Autowall;
 
 //========================================================================
 
-float Autowall_t::GetRemainingPower(vec3_t start, vec3_t end, centity_t *ent)
-{		
-	/*BulletFireParams bl_enter;	
-
-	bl_enter.worldEntNum = ENTITYNUM_WORLD;
-	bl_enter.ignoreEntIndex = cg->clientNum;
-	bl_enter.damageMultiplier = BULLET_POWER;
-
-	CWeapon *pWeapon = (CWeapon *)(Engine.GetCWeapon(cg_entities[cg->clientNum].weaponID));
-	if (pWeapon)
-		bl_enter.methodOfDeath = pWeaponImpacttype(&ci[cg->clientNum], pWeapon);
-	else
-		bl_enter.methodOfDeath = 1.0f;
-
-	VectorCopy(start, bl_enter.origStart);
-	VectorCopy(start, bl_enter.start);
-	VectorCopy(end, bl_enter.end);
-	VectorSubtract(end, start, bl_enter.dir);
-
-	if (!Engine.R_BulletPenetrationCheck(&bl_enter))
-		return -1.0f;
-
-	trace_t tr_enter;
-	     
-	if (!TraceBullet(&bl_enter, &tr_enter, &cg_entities[cg->clientNum], 0))
-		return 1.0f;
-
-	// This is done by the game.
-	if (tr_enter.allsolid)	
-		return -1.0f;
-
-	int surfaces = 0;
-	int perks = ci[cg->clientNum].perk;
-	BulletFireParams bl_exit;
-	trace_t tr_exit;
-	vec3_t end_pos;
-
-	while (true) {
-		auto pen_depth = pfnGetBulletPenetration(pWeapon, tr_enter.materialType);		
-		
-		if (perks & 0x20)
-			pen_depth *= (perk_bulletPenetrationMultiplier && perk_bulletPenetrationMultiplier->getFloatValue() > 0.0f) 
-			? perk_bulletPenetrationMultiplier->getFloatValue() : 1.0f;
-		
-		
-		if (pen_depth <= 0.0f)
-			return -1.0f;			
-
-		// Save the trace's endpos.
-		VectorCopy(tr_enter.endpos, end_pos);
-
-		// Step into the hit wall.
-		if (!StepForward(&bl_enter, &tr_enter, 0.13500001f) || !Engine.R_BulletPenetrationCheck(&bl_enter))
-			return -1.0f;
-
-		auto did_hit = TraceBullet(&bl_enter, &tr_enter, &cg_entities[cg->clientNum], tr_enter.materialType);
-
-		
-		CopyTrace(&bl_exit, &bl_enter, sizeof(BulletFireParams));
-		VectorScale(bl_enter.dir, -1.0f, bl_exit.dir);		
-		VectorCopy(bl_enter.end, bl_exit.start);									
-		VectorMA(end_pos, 0.009999999776482582, bl_exit.dir, bl_exit.end);			
+float Autowall_t::GetRemainingPower(vec3_t start, vec3_t end, centity_t* ent)
+{
+	CWeapon* pWeapon = (Engine.GetCWeapon(cg_entities[cg->clientNum].weaponID));
 	
-
-		CopyTrace(&tr_exit, &tr_enter, sizeof(trace_t));
-		VectorScale(tr_exit.surfaceDirection, -1.0f, tr_exit.surfaceDirection);
-
-		if (did_hit)		
-			StepForward(&bl_exit, &tr_exit, 0.0099999998f);
-
-		
-		auto inv_trace = TraceBullet(&bl_exit, &tr_exit, &cg_entities[cg->clientNum], tr_exit.materialType) != 0;
-		auto inv_solid = inv_trace && tr_exit.allsolid || (tr_enter.allsolid && tr_exit.startsolid);	
-
-		if (inv_trace || inv_solid) {
-			auto wall_depth = 0.0f;
-
-			if (inv_solid)
-				wall_depth = Math.GetDistance(bl_exit.start, bl_exit.end);			
-			else
-				wall_depth = Math.GetDistance(tr_exit.endpos, end_pos);
-
-			wall_depth = max(wall_depth, 1.0f);
-
-			if (inv_trace) {
-				auto pen_depth2 = pfnGetBulletPenetration(pWeapon, tr_exit.materialType);
-
-				if (perks & 0x20)
-					pen_depth2 *= (perk_bulletPenetrationMultiplier && perk_bulletPenetrationMultiplier->getFloatValue() > 0.0f)
-					? perk_bulletPenetrationMultiplier->getFloatValue() : 1.0f;
-
-				pen_depth = min(pen_depth, pen_depth2);
-
-				if (pen_depth <= 0.0f)
-					return -1.0f;
-			}
-
-			bl_enter.damageMultiplier -= wall_depth / pen_depth;
-
-			if (bl_enter.damageMultiplier <= 0.0f)
-				return -1.0f;
-		}		
-
-		
-		if (tr_enter.entityNum == ent->clientnum)
-			return bl_enter.damageMultiplier;	
-
-		surfaces++;
-
-		if (surfaces > 5)
-			break;
-	}
-
-	return -1.0f;*/
-
-
-CWeapon *pWeapon = (CWeapon *)(Engine.GetCWeapon(cg_entities[cg->clientNum].weaponID));
-if (!pWeapon)
-return -1.0f;
+	if (!pWeapon)
+		return -1.0f;
 
 	BulletFireParams bl_enter;
 	trace_t tr_enter;
@@ -141,20 +28,19 @@ return -1.0f;
 	VectorCopy(start, bl_enter.origStart);
 	VectorCopy(start, bl_enter.start);
 	VectorCopy(end, bl_enter.end);
-	
 
 	bool did_hit = TraceBullet(&bl_enter, &tr_enter, &cg_entities[cg->clientNum], 0);
 
 	if (did_hit)
 	{
-		bool inv_trace;
-		bool inv_solid;
 		int surfaces = 0;
-		float pen_depth;
+		float pen_depth = 0.0f;
+		float pen_depth2 = 0.0f;
+		float wall_depth = 0.0f;
 		int perks = ci[cg->clientNum].perk;
 		BulletFireParams bl_exit;
 		trace_t tr_exit;
-		vec3_t end_pos;
+		vec3_t end_pos = { 0.0f };
 
 		while (true)
 		{
@@ -162,9 +48,7 @@ return -1.0f;
 
 			//if ( *(_DWORD *)(a5 + 212) == 1 && (unsigned int)&unk_4000000 & v41 )
 			if (perks & 0x20)
-				pen_depth *= (perk_bulletPenetrationMultiplier && perk_bulletPenetrationMultiplier->getFloatValue() > 0.0f)
-				? perk_bulletPenetrationMultiplier->getFloatValue() : 1.0f;
-
+				pen_depth *= perk_bulletPenetrationMultiplier->getFloatValue();
 
 			if (pen_depth <= 0.0f)
 				return 0.0f;
@@ -173,7 +57,7 @@ return -1.0f;
 			VectorCopy(tr_enter.endpos, end_pos);
 
 			// Step into the hit wall.
-			if (!StepForward(&bl_enter, &tr_enter, 0.13500001f) || !Engine.R_BulletPenetrationCheck(&bl_enter))
+			if (!StepForward(&bl_enter, &tr_enter, 0.13500001f))
 				return 0.0f;
 
 			did_hit = TraceBullet(&bl_enter, &tr_enter, &cg_entities[cg->clientNum], tr_enter.materialType);
@@ -190,8 +74,8 @@ return -1.0f;
 			if (did_hit)
 				StepForward(&bl_exit, &tr_exit, 0.0099999998f);
 
-			inv_trace = TraceBullet(&bl_exit, &tr_exit, &cg_entities[cg->clientNum], tr_exit.materialType);
-			inv_solid = (inv_trace && tr_exit.allsolid) || (tr_enter.startsolid && tr_exit.startsolid);
+			bool inv_trace = TraceBullet(&bl_exit, &tr_exit, &cg_entities[cg->clientNum], tr_exit.materialType);
+			bool inv_solid = (inv_trace && tr_exit.allsolid) || (tr_enter.startsolid && tr_exit.startsolid);
 
 			if (inv_trace || inv_solid)
 			{
@@ -210,8 +94,7 @@ return -1.0f;
 					float pen_depth2 = pfnGetBulletPenetration(pWeapon, tr_exit.materialType);
 
 					if (perks & 0x20)
-						pen_depth2 *= (perk_bulletPenetrationMultiplier && perk_bulletPenetrationMultiplier->getFloatValue() > 0.0f)
-						? perk_bulletPenetrationMultiplier->getFloatValue() : 1.0f;
+						pen_depth2 *= perk_bulletPenetrationMultiplier->getFloatValue();
 
 					pen_depth = min(pen_depth, pen_depth2);
 
@@ -239,8 +122,6 @@ return -1.0f;
 	}
 
 	return bl_enter.damageMultiplier;
-		
-
 }
 
 bool  Autowall_t::TraceBullet(BulletFireParams* bulletTrace, trace_t* trace, centity_t* cent, int material)

@@ -159,13 +159,8 @@ void WritePacket()
 				DoCurCmd(curCmd, /**reinterpret_cast<int*>(Offsets::newseed) - 1*/ curCmd->servertime);
 				DoNextCmd(nextCmd);										
 			}			
-			
-			
 		}	
 
 		Aim.Autoshoot();
 	}
-
-
-	
 }

@@ -19,6 +19,12 @@
 #define	VectorMA(v, s, b, o)	((o)[0]=(v)[0]+(b)[0]*(s),(o)[1]=(v)[1]+(b)[1]*(s),(o)[2]=(v)[2]+(b)[2]*(s))
 #define DotProduct(x,y)			((x)[0]*(y)[0]+(x)[1]*(y)[1]+(x)[2]*(y)[2])
 
+
+#define DegreesToRadians(a) ((a)*((float)M_PI/180.0f))
+#define RadiansToDegrees(a) ((a)*(180.0f/(float)M_PI))
+#define AngleNormalize(a) (SHORT2ANGLE(ANGLE2SHORT((a))))
+
+
 typedef float vec_t;
 typedef float vec2_t[2];
 typedef float vec3_t[3];

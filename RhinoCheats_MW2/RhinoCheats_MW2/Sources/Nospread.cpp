@@ -5,37 +5,28 @@ NoSpread_t Nospread;
 //\x83\xEC\x10\xD9\x05\x00\x00\x00\x00\xD9\x1C xxxxx????xx
 void NoSpread_t::FirstBulletFix()
 {
-	/*float v1, v2, v3, v4;
+	float v3, v4, v5, v6;
 
-	v4 = *(float*)0x976D84;
+	v3 = *(float*)0x91362C;
 
-	if ((*(float*)0x978178) != 0.f)
-	{
-		v4 = *(float*)0x978178 * *(float*)0x976D84;
-	}
-	
-	*(float*)0x1065BE0 = v4;	
+	if (*(float*)0x914E3C != 0.0)
+		v3 = *(float*)0x914E3C * *(float*)0x91362C;
 
-	*(float*)0x1065BEC = *(float*)0x9780D4;
-	*(float*)0x1065BF0 = *(float*)0x9780E4;
-	*(float*)0x1065BF4 = *(float*)0x9780E8;
+	*(float*)0xBC7704 = v3;
 
-	//========================================================================	
-		
-	*(DWORD*)0x977D6C = 0; 		
+	v4 = *(float*)0x914DA0 + *(float*)0x914D94;
+	v5 = *(float*)0x914DA4 + *(float*)0x914D98;
+	v6 = *(float*)0x914DA8 + *(float*)0x914D9C;
 
-	v1 = *(float*)0x9780E0 + *(float*)0x1065BD4;
-	v2 = *(float*)0x9780D8 + *(float*)0x1065BD8;
-	v3 = *(float*)0x9780DC + *(float*)0x1065BDC;
-	*(float*)0xFB7410 = v1;
-	*(float*)0xFB7414 = v2;
-	*(float*)0xFB7418 = v3;
+	*(float*)0xBC7710 = v4;
+	*(float*)0xBC7714 = v5;
+	*(float*)0xBC7718 = v6;
 
-	*(int*)0x1065C7C |= *(int*)0xA058B8;
+	*(int*)0xBC76FC = *(int*)0x913F1C;
+	*(int*)0xBC7700 = *(int*)0x914A24;
 
-	*(int*)0xA058B8 = 0;*/
-		
-	//crash: ((void(__cdecl*)(void *a1, int a2))0x448990)(0, 3);
+	*(int*)0xBC7748 |= *(int*)0x99E1C4;
+	*(int*)0x99E1C4 = 0;
 }
 
 void NoSpread_t::GetWeaponSpread(float*Spread)
@@ -91,7 +82,7 @@ void NoSpread_t::ApplyNoSpread(usercmd_t *cmd, int seed)
 	if (Settings[no_spread].Value.bValue && 
 		!ci[cg->clientNum].zooming)
 	{			
-		// FirstBulletFix();
+		FirstBulletFix();
 
 		GetWeaponSpread(&weaponSpread);		
 

@@ -70,7 +70,7 @@ class Engine_t {
 
 public:		
 	weapon_t *GetCombatWeapon(int Index); //only for esp, name check.
-	DWORD     GetCWeapon(int i); //for nospread, autowall
+	CWeapon*  GetCWeapon(int i); //for nospread, autowall
 	WORD      RegisterTag(const char * szBone);
 	dvar_t   *FindVar(char * name);
 	bool      WorldToScreen(vec3_t vWorldLocation, float Screen[2]);	

@@ -45,7 +45,7 @@ bool Entity_t::IsEnemy(int i)
 
 bool Entity_t::IsUsingRiot(int i)
 {
-	if (cg_entities[i].weaponID != 2 || cg_entities[i].weaponID != 3)
+	if (cg_entities[i].weaponID != 2 && cg_entities[i].weaponID != 3)
 		return false;
 
 	return true;

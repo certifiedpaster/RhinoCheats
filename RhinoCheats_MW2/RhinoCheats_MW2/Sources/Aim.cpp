@@ -345,7 +345,7 @@ int  Aim_t::GetClosestClientByFOV()
 		if (Entity.IsValid(i) && Entity.IsEnemy(i))
 		{
 			//non riot.
-			if (cg_entities[i].weaponID != 2 || cg_entities[i].weaponID != 3)
+			if (cg_entities[i].weaponID != 2 && cg_entities[i].weaponID != 3)
 			{				
 				if (Engine.Getvectorfromtag(&cg_entities[i], Entity.bones[j_spine4], bestBone) && Autowall.NormalVisible(bestBone))
 				{

@@ -150,7 +150,7 @@ void Bot_InitSettings()
 
 	//========================================================================
 
-	Settings[style_color] = Bot_AddConfig("Style Settings", "Style_Color", 13, 0, 14);
+	Settings[style_color] = Bot_AddConfig("Style Settings", "Style_Color", 7, 0, 8);
 	Settings[style_font] = Bot_AddConfig("Style Settings", "Style_Font", 1, 0, 1);
 	Settings[style_rainbow] = Bot_AddConfig("Style Settings", "Style_RainbowFx", true);
 

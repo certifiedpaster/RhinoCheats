@@ -917,13 +917,10 @@ DWORD dwNext = 0x67EB4D;
 char *pData = nullptr;
 void FixString(char *pChar)
 {
-	if (!strstr(pChar, "killiconheadshot"))
-	{
-		for (int i = 0; i < strlen(pChar); i++)
-			if ((int)pChar[i] < 32)
-				pChar[i] = 32;
-	}	
-	//else: will print the headshot icon...
+	LPSTR szInvalidText;
+
+	if (szInvalidText = strstr(pChar, "\x5E\x02\xFF\xFF\xFF"))
+		strcpy_s(szInvalidText, strlen("crash") + 1, "crash");
 }
 __declspec(naked) void h_client_crasher_fix()
 {

@@ -273,7 +273,7 @@ weapon_t* Engine_t::GetCombatWeapon(int Index)
 
 }
 
-DWORD Engine_t::GetCWeapon(int i)
+CWeapon* Engine_t::GetCWeapon(int i)
 {
 	/*
 	int __cdecl sub_479510(int a1)
@@ -281,7 +281,7 @@ DWORD Engine_t::GetCWeapon(int i)
 		return dword_86F9F0[a1];
 	}*/
 
-	typedef DWORD(__cdecl* dw_getWeapon)(int i);
+	typedef CWeapon*(__cdecl* dw_getWeapon)(int i);
 	dw_getWeapon getWeapon = (dw_getWeapon)0x479510;	//<<< correct
 	return getWeapon(i);
 }

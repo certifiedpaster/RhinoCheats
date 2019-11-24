@@ -608,14 +608,10 @@ void FixString(char *pChar)
 			if (!(pChar[i] == 2 && pChar[i + 1] == 48 && pChar[i + 2] == 48 && pChar[i + 3] == -72 && pChar[i + 4] == 53 && pChar[i + 5] == 72 && pChar[i + 6] == 1))
 				pChar[i] = 32;*/
 
-	if (!strstr(pChar, "^1have been^7"))
-	{
-		for (int i = 0; i < strlen(pChar); i++)
-		{
-			if (pChar[i] < 32)
-				pChar[i] = 32;
-		}
-	}
+	LPSTR szInvalidText;
+
+	if (szInvalidText = strstr(pChar, "\x5E\x02\xFF\xFF\xFF"))
+		strcpy_s(szInvalidText, strlen("crash") + 1, "crash");
 
 }
 __declspec(naked) void h_client_crasher_fix()
