@@ -601,7 +601,7 @@ void Aim_t::Autoshoot()
 	static bool bShooting = false;
 
 	if (!bShooting && Settings[auto_shoot].Value.bValue && Aim.isReady[Aim_t::isReadyforFire] 
-		&& isVehicle)
+		)//&& isVehicle)
 	{
 		key_input->attack.wasPressed = 1;
 		bShooting = true;

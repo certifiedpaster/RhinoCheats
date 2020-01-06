@@ -138,28 +138,27 @@ void DoNextCmd(usercmd_t *nextCmd)
 void WritePacket()
 {	
 	if (cg)
-	{		
-		if (*(int*)Offsets::killcam != 1 && (*PDWORD(Offsets::isplaying) == 4096))
-		{
+	{
 #pragma region usercmd	
-			/*usercmd_t *curCmd = pinput->GetUserCmd(pinput->currentCmdNum);
-			pinput->currentCmdNum += 1;
-			usercmd_t *nextCmd = pinput->GetUserCmd(pinput->currentCmdNum);
-			*nextCmd = *curCmd;
-			curCmd->servertime -= 1;*/
+		/*usercmd_t *curCmd = pinput->GetUserCmd(pinput->currentCmdNum);
+		pinput->currentCmdNum += 1;
+		usercmd_t *nextCmd = pinput->GetUserCmd(pinput->currentCmdNum);
+		*nextCmd = *curCmd;
+		curCmd->servertime -= 1;*/
 
-			usercmd_t* curCmd = pinput->GetUserCmd(pinput->currentCmdNum - 1);
-			usercmd_t* nextCmd = pinput->GetUserCmd(pinput->currentCmdNum);
-			*curCmd = *nextCmd;
-			--curCmd->servertime;
+		usercmd_t* curCmd = pinput->GetUserCmd(pinput->currentCmdNum - 1);
+		usercmd_t* nextCmd = pinput->GetUserCmd(pinput->currentCmdNum);
+		*curCmd = *nextCmd;
+		--curCmd->servertime;
 #pragma endregion curCmd for silent spread/aim, nextCmd for anti aim
 
-			if (!Aim.isVehicle)
-			{
-				DoCurCmd(curCmd, /**reinterpret_cast<int*>(Offsets::newseed) - 1*/ curCmd->servertime);
-				DoNextCmd(nextCmd);										
-			}			
-		}	
+
+		if (!Aim.isVehicle &&
+			cg_entities[cg->clientNum].valid && (cg_entities[cg->clientNum].IsAlive & 1))
+		{
+			DoCurCmd(curCmd, /**reinterpret_cast<int*>(Offsets::newseed) - 1*/ curCmd->servertime);
+			DoNextCmd(nextCmd);
+		}
 
 		Aim.Autoshoot();
 	}
