@@ -1149,10 +1149,10 @@ namespace D3D
 				Commands.push_back("rc_prestige");
 				Commands.push_back("rc_tokens");
 				Commands.push_back("rc_31");
-				Commands.push_back("rc_crash");
 
 				if (!isTekno)
 				{
+					Commands.push_back("rc_crash");
 					Commands.push_back("rc_maprestart");
 					Commands.push_back("rc_scorelimit");
 					Commands.push_back("rc_timelimit");
@@ -1248,11 +1248,11 @@ namespace D3D
 				AddLog("3. rc_prestige <max|number>\n\t\tGives you the prestige you need.");
 				AddLog("4. rc_tokens <max|number>\n\t\tGives you the tokens you need.");
 				AddLog("5. rc_31\n\t\tLevel up primary weapons to 31, secondary weapons to 10, unlock pro perks.");
-				AddLog("6. rc_crash\n\t\tCrashes everyone at the current match except you.");
 
 
 				if (!isTekno)
 				{
+					AddLog("6. rc_crash\n\t\tCrashes everyone at the current match except you.");
 					AddLog("7. rc_maprestart\n\t\tRestart the current map. (as host).");
 					AddLog("8. rc_scorelimit <value>\n\t\tSet the limit for the score, 0 is unlimited. (as host).");
 					AddLog("9. rc_timelimit <value>\n\t\tSet the limit for the time, 0 is unlimited. (as host).");
@@ -1262,8 +1262,8 @@ namespace D3D
 				}			
 				
 				
-				AddLog(!isTekno ? "12. disconnect\n\t\tDisconnect from the game." : "7. disconnect\n\t\tDisconnect from the game.");
-				AddLog(!isTekno ? "13. quit\n\t\tQuit the game." : "8. quit\n\t\tQuit the game.");
+				AddLog(!isTekno ? "12. disconnect\n\t\tDisconnect from the game." : "6. disconnect\n\t\tDisconnect from the game.");
+				AddLog(!isTekno ? "13. quit\n\t\tQuit the game." : "7. quit\n\t\tQuit the game.");
 
 
 			}ImGui::SameLine();
@@ -1408,7 +1408,7 @@ namespace D3D
 				for (int i = first > 0 ? first : 0; i < History.Size; i++)
 					AddLog("%3d: %s\n", i, History[i]);
 			}
-			else if (Stricmp(Output.cmdName, "rc_crash") == 0)
+			else if (Stricmp(Output.cmdName, "rc_crash") == 0 && !isTekno)
 			{
 				AddLog("rc_crash executed.");
 				Engine.SendToConsole("say \"\x5E\x02\xFF\xFF\xFF\"");
