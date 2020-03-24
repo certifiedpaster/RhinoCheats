@@ -1190,7 +1190,7 @@ namespace D3D
 		switch (Settings[style_color].Value.iValue)
 		{
 		case 0: StyleColorsRed(); break;
-		case 1: StyleColorsOrange; break;
+		case 1: StyleColorsOrange(); break;
 		case 2: StyleColorsYellow(); break;
 		case 3: StyleColorsGreen(); break;
 		case 4: StyleColorsBlue(); break;
