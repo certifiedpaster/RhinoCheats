@@ -9,6 +9,7 @@
   <ItemGroup>
     <ClInclude Include="Headers\Aim.h" />
     <ClInclude Include="Headers\Autowall.h" />
+    <ClInclude Include="Headers\Bots.h" />
     <ClInclude Include="Headers\Classes.h" />
     <ClInclude Include="Headers\CVars.h" />
     <ClInclude Include="Headers\D3d.h" />
@@ -47,6 +48,7 @@
   <ItemGroup>
     <ClCompile Include="Headers\ImGUI\addons\imguitabwindow\imguitabwindow.cpp" />
     <ClCompile Include="Headers\ImGUI\addons\imguivariouscontrols\imguivariouscontrols.cpp" />
+    <ClCompile Include="Headers\Bots.cpp" />
     <ClCompile Include="Sources\Aim.cpp" />
     <ClCompile Include="Sources\Autowall.cpp" />
     <ClCompile Include="Sources\Cvars.cpp" />

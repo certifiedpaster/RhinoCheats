@@ -52,3 +52,4 @@
 #include "KillSpam.h"
 
 #include "Host.h"
+#include "Bots.h"

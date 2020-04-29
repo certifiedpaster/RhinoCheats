@@ -70,42 +70,25 @@ void InverseTroller(usercmd_t *pCmd)
 	}
 }
 
-//========================================================================
-
-void MovementFix(usercmd_t* usercmd, float yaw)
+void ClampMove(char* value)
 {
-	if (usercmd->forwardmove || usercmd->rightmove)
-	{
-		float flMove = AngleNormalize(RadiansToDegrees(atan2(-usercmd->rightmove / 127.0f, usercmd->forwardmove / 127.0f)));
-		float flDelta = AngleNormalize(yaw);
-		float flDestination = AngleNormalize(flMove - flDelta);
-		float flForwardRatio = cos(DegreesToRadians(flDestination));
-		float flRightRatio = -sin(DegreesToRadians(flDestination));
+	while (*value < -128)
+		*value = -128;
 
-		if (abs(flForwardRatio) < abs(flRightRatio))
-		{
-			flForwardRatio *= 1.0f / abs(flRightRatio);
-			flRightRatio = flRightRatio > 0.0f ? 1.0f : -1.0f;
-		}
-
-		else if (abs(flForwardRatio) > abs(flRightRatio))
-		{
-			flRightRatio *= 1.0f / abs(flForwardRatio);
-			flForwardRatio = flForwardRatio > 0.0f ? 1.0f : -1.0f;
-		}
-
-		else
-		{
-			flForwardRatio = 1.0f;
-			flRightRatio = 1.0f;
-		}
-
-		usercmd->forwardmove = (char)(flForwardRatio * 127.0f);
-		usercmd->rightmove = (char)(flRightRatio * 127.0f);
-	}
+	while (*value > 127)
+		*value = 127;
 }
 
-//========================================================================
+void MovementFix(usercmd_t* usercmd, float yaw, float oldyaw, float forward, float right)
+{
+	float flDelta = DegreesToRadians(yaw - oldyaw);
+
+	usercmd->forwardmove = (char)(cosf(flDelta) * forward - sinf(flDelta) * right);
+	usercmd->rightmove = (char)(sinf(flDelta) * forward + cosf(flDelta) * right);
+
+	ClampMove(&usercmd->forwardmove);
+	ClampMove(&usercmd->rightmove);
+}
 
 void DoCurCmd(usercmd_t *curCmd, int seed)
 {		
@@ -117,10 +100,12 @@ void DoCurCmd(usercmd_t *curCmd, int seed)
 	if (Settings[silent_aim].Value.bValue && Aim.isReady[Aim_t::isReadyforFire] && !Settings[third_person].Value.bValue)
 	{
 		//-= doesn't work
+		float flOldYaw = SHORT2ANGLE(curCmd->viewangles[1]);
+
 		curCmd->viewangles[1] += ANGLE2SHORT(Aim.vAimAngles[1]);
 		curCmd->viewangles[0] += ANGLE2SHORT(Aim.vAimAngles[0]);
 
-		MovementFix(curCmd, Aim.vAimAngles[1]);
+		MovementFix(curCmd, SHORT2ANGLE(curCmd->viewangles[1]), flOldYaw, curCmd->forwardmove, curCmd->rightmove);
 	}
 }
 

@@ -123,6 +123,9 @@
     <ClInclude Include="Headers\Host.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\Bots.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Autowall.cpp">
@@ -204,6 +207,9 @@
       <Filter>Sources\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Host.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Headers\Bots.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

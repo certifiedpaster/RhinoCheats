@@ -2890,7 +2890,7 @@ namespace D3D
 							ImGui::Text("Numpad 2: Force class 2"); ImGui::SameLine(200); ImGui::Text("F2: Switch team");
 							ImGui::Text("Numpad 3: Force class 3"); ImGui::SameLine(200); ImGui::Text("F3: Go spectator");
 							ImGui::Text("Numpad 4: Force class 4"); ImGui::SameLine(200); ImGui::Text("END: End game");
-							ImGui::Text("Numpad 5: Force class 5");
+							ImGui::Text("Numpad 5: Force class 5"); ImGui::SameLine(200); ImGui::Text("HOME: Spawn bots");
 							ImGui::Text("Numpad 6: Force class 6");
 							ImGui::Text("Numpad 7: Force class 7");
 							ImGui::Text("Numpad 8: Force class 8");
@@ -3703,6 +3703,9 @@ namespace D3D
 		g_bNumPad8 = GetKeyMessages(&KeyMessages[VK_NUMPAD8]) ? true : false;
 		g_bNumPad9 = GetKeyMessages(&KeyMessages[VK_NUMPAD9]) ? true : false;
 		g_bNumPad0 = GetKeyMessages(&KeyMessages[VK_NUMPAD0]) ? true : false;
+
+		if (GetKeyMessages(&KeyMessages[VK_HOME]))
+			Bots.addbots();
 
 		if (g_bWasInitialized && g_bMainWindowOpen && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
 			return true;
