@@ -70,26 +70,6 @@ void InverseTroller(usercmd_t *pCmd)
 	}
 }
 
-void ClampMove(char* value)
-{
-	while (*value < -128)
-		*value = -128;
-
-	while (*value > 127)
-		*value = 127;
-}
-
-void MovementFix(usercmd_t* usercmd, float yaw, float oldyaw, float forward, float right)
-{
-	float flDelta = DegreesToRadians(yaw - oldyaw);
-
-	usercmd->forwardmove = (char)(cosf(flDelta) * forward - sinf(flDelta) * right);
-	usercmd->rightmove = (char)(sinf(flDelta) * forward + cosf(flDelta) * right);
-
-	ClampMove(&usercmd->forwardmove);
-	ClampMove(&usercmd->rightmove);
-}
-
 void DoCurCmd(usercmd_t *curCmd, int seed)
 {		
 	if (Settings[auto_shoot].Value.bValue && Aim.isReady[Aim_t::isReadyforFire])
@@ -104,8 +84,6 @@ void DoCurCmd(usercmd_t *curCmd, int seed)
 
 		curCmd->viewangles[1] += ANGLE2SHORT(Aim.vAimAngles[1]);
 		curCmd->viewangles[0] += ANGLE2SHORT(Aim.vAimAngles[0]);
-
-		MovementFix(curCmd, SHORT2ANGLE(curCmd->viewangles[1]), flOldYaw, curCmd->forwardmove, curCmd->rightmove);
 	}
 }
 
